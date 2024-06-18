@@ -25,7 +25,13 @@ RUN pip install --no-cache-dir -r requirements.txt
 | ubuntu | $(pwd) |
 
 ```shell
-> docker run -it --gpus all --shm-size=8G -v %PATH%:/workspace torch2
+> docker run -it --name [NAME] -p 8888:8888 --gpus all --shm-size=8G -v %PATH%:/workspace torch2
 # example - ubuntu
-# docker run -it --gpus all --shm-size=8G -v $(pwd):/workspace torch2
+# docker run -it --name [NAME] -p 8888:8888 --gpus all --shm-size=8G -v $(pwd):/workspace torch2
+```
+
+## Notebook
+
+```shell
+jupyter notebook --ip 0.0.0.0 --allow-root --no-browser
 ```
